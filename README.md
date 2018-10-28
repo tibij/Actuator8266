@@ -1,2 +1,2 @@
 # Oxygen ESP8266 Actuator
-Simple actuator for ESP8266.
+Floor heating control done using an Olimex ESP8266-EVB board.
