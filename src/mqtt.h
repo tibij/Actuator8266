@@ -5,4 +5,4 @@ const char* mqttUserName = "";
 const char* mqttPassword = "";
 
 const char* mqttTopicPompaPardoseala = "house/demisol/centrala/pompaDemisolPardoseala/state";
-const char* mqttTopicPufferTemperaturaTur = "house/demisol/centrala/puffer/tempTur/value";
+

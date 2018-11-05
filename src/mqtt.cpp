@@ -15,13 +15,14 @@ void callback(char* topic, byte* payload, unsigned int length) {
   Serial.print("Message arrived [");
   Serial.print(topic);
   Serial.print("] ");
-  for (int i = 0; i < length; i++) {
+  for (unsigned int i = 0; i < length; i++) {
     Serial.print((char)payload[i]);
     value += (char)payload[i];
   }
   Serial.println();
-  
-  // Seteaza pompa
+
+  // Subscrierea e unica asa ca putem sa dam comanda direct la pompa
+  // In caz ca vor fi mai multe subscierei va trebui refacut
   controlPompa(value);
 }
 
@@ -58,12 +59,15 @@ int reconnect() {
 
 int checkMQTT() {
   int isConnected = mqttClient.connected();
+  
   Serial.print("MQTTConnected status: ");
   Serial.println(isConnected);
-    if (!isConnected)
-        isConnected = reconnect();
-    else
-        mqttClient.loop();
+  
+  if (!isConnected)
+    isConnected = reconnect();
+  else
+    mqttClient.loop();
+  
   return isConnected;
 }
 
@@ -106,7 +110,6 @@ void publishMQTT(const char* mqttTopic, String value) {
 void subscribeMQTT(const char* mqttTopic) {
     
     int result;
-    char valueString[20];
     
     Serial.println("Subscribing ...");
 

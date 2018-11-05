@@ -1,4 +1,8 @@
 // Main.h
+
+const char* mqttTopicTempCircuitPardoseala = "house/etaj/birou/tempCircuitPardoseala/value";
+const char* mqttTopicTempBirou = "house/etaj/birou/temp/value";
+
 void setupGPIOs();
 
 int setupWiFi();
@@ -9,9 +13,8 @@ int checkMQTT();
 
 void subscribeMQTT(const char* mqttTopic);
 
-// void setupOneWireBus();
+void publishMQTT(const char* mqttTopic, String value);
 
+void setupOneWireBus(int precision);
 
-// void publicaStareaActuala();
-
-// String getTemperature();
+String getTemperature(int address);
