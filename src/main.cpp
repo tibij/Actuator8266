@@ -28,17 +28,11 @@ void loop() {
     // Check connection to the brocker
     checkMQTT();
     
-    // Temperatura retur pardoseala
-    temperatura = getTemperature(0);
-    Serial.print("Temperatura #1: ");
-    Serial.println(temperatura);
-    publishMQTT(mqttTopicTempCircuitPardoseala, temperatura);
-    
     // Temperatura camera birou
-    temperatura = getTemperature(1);
-    Serial.print("Temperatura #2: ");
+    temperatura = getTemperature(0);
+    Serial.print("Temperatura birou: ");
     Serial.println(temperatura);
     publishMQTT(mqttTopicTempBirou, temperatura);
-
+    
     delay(5000);
 }
