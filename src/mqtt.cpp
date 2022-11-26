@@ -60,8 +60,8 @@ int reconnect() {
 int checkMQTT() {
   int isConnected = mqttClient.connected();
   
-  Serial.print("MQTTConnected status: ");
-  Serial.println(isConnected);
+  //Serial.print("MQTTConnected status: ");
+  //Serial.println(isConnected);
   
   if (!isConnected)
     isConnected = reconnect();

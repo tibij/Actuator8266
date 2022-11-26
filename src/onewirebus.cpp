@@ -6,7 +6,7 @@
 
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature DS18B20(&oneWire);
-
+extern float readTemperature;
 
 DeviceAddress  sensors[3];
 
@@ -34,7 +34,7 @@ void setupOneWireBus(int precision) {
 
 String getTemperature(int address) {  
 
-  float readTemperature;
+  // float readTemperature;
 
   if (DS18B20.getAddress(sensors[address], address))
   {

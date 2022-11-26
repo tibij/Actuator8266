@@ -18,3 +18,11 @@ void publishMQTT(const char* mqttTopic, String value);
 void setupOneWireBus(int precision);
 
 String getTemperature(int address);
+
+unsigned long startMillis;
+unsigned long currentMillis;
+const unsigned long period = 12000; // 12 seconds 
+unsigned int contor = 0;
+float sum = 0;
+
+float readTemperature;
