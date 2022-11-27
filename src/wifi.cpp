@@ -2,7 +2,7 @@
 #include <ESP8266WiFi.h>
 
 // WiFi Credentials
-const char* ssid = "cgr";
+const char* ssid = "cgrn";
 const char* password = "monchiX2";
 
 
