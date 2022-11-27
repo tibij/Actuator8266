@@ -30,7 +30,7 @@ void loop() {
     if (currentMillis - startMillis >= period)  //test whether the period has elapsed
     {
         // Calculam media temperaturilor citite
-        if (contor < 20){
+        if (contor < 10){
             Serial.print("Citeste temperatura ... :");
             
             // Temperatura camera birou
@@ -45,7 +45,7 @@ void loop() {
             Serial.println(contor);
         }
         else{
-            readTemperature = sum / 20;
+            readTemperature = sum / 10;
             contor = 0;
             sum = 0;
             Serial.print("Temperatura medie:");
